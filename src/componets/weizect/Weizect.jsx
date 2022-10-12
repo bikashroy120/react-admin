@@ -3,6 +3,7 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import './weizect.css'
 
 const Weizect = ({ type }) => {
   let data;
@@ -78,20 +79,22 @@ const Weizect = ({ type }) => {
   }
 
   return (
-    <div className="widget flex-1 shadow-2xl">
-      <div className="left">
+    <div className="widget flex-1 flex items-start justify-between">
+      <div className="left flex flex-col  h-full justify-between">
         <span className="title">{data.title}</span>
-        <span className="counter">
+        <span className="counter text-[25px] font-[500]">
           {data.isMoney && "$"} {amount}
         </span>
         <span className="link">{data.link}</span>
       </div>
-      <div className="right">
+      <div className="right relative h-full">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
           {diff} %
         </div>
+        <div className=" absolute bottom-1 right-1">
         {data.icon}
+        </div>
       </div>
     </div>
   );
